@@ -4,19 +4,43 @@ import {
   StyleSheet,
   ImageBackground,
   TouchableOpacity,
+  ActivityIndicator,
 } from "react-native";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "expo-router";
+import { onAuthStateChanged } from "firebase/auth";
 
 import { Fonts } from "../constants/Fonts";
+import { auth } from "../services/firebaseConfig";
 import WizardMessageModal from "../components/shared/wizardMessageModal";
 
 export default function Index() {
   const router = useRouter();
 
+  const [authChecking, setAuthChecking] = useState(true);
   const [modalVisibility, setModalVisibility] = useState(false);
   const [tutorialStep, setTutorialStep] = useState(0);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (user) => {
+        if (user) {
+          router.replace("/(tabs)/home");
+          return;
+        }
+
+        setAuthChecking(false);
+      },
+      (error) => {
+        console.error("Firebase auth state error:", error);
+        setAuthChecking(false);
+      },
+    );
+
+    return unsubscribe;
+  }, [router]);
 
   const tutorialMessages = [
     {
@@ -69,6 +93,14 @@ export default function Index() {
     router.replace("/(auth)/loginScreen");
   };
 
+  if (authChecking) {
+    return (
+      <View style={styles.authLoading}>
+        <ActivityIndicator size="large" color="#FFD86B" />
+      </View>
+    );
+  }
+
   return (
     <ImageBackground
       source={require("../assets/images/landScreenBg.png")}
@@ -115,6 +147,13 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
+  authLoading: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#130B2B",
+  },
+
   background: {
     flex: 1,
   },
