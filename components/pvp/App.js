@@ -50,6 +50,11 @@ export default function App() {
     dismissRematchDialog,
   } = usePvpSession();
 
+  const displayOpponentUsername = String(opponentUsername || "").replace(
+    /(^|\s)\S/g,
+    (character) => character.toUpperCase(),
+  );
+
   return (
     <SafeAreaProvider>
       <StatusBar style="light" />
@@ -96,7 +101,7 @@ export default function App() {
             leave={leave}
             surrender={surrender}
             opponentAvatarId={opponentAvatarId}
-            opponentUsername={opponentUsername}
+            opponentUsername={displayOpponentUsername}
             rematch={rematch}
 
     
@@ -161,13 +166,13 @@ export default function App() {
               </Text>
               <Text style={st.modalMessage}>
                 {rematchDialog?.type === "incoming"
-                  ? `${opponentUsername} wants a rematch. Do you agree?`
+                  ? `${displayOpponentUsername} wants a rematch. Do you agree?`
                   : rematchDialog?.type === "waiting"
-                    ? `Waiting for ${opponentUsername} to respond…`
+                    ? `Waiting for ${displayOpponentUsername} to respond…`
                     : rematchDialog?.type === "starting"
-                      ? `${opponentUsername} agreed. Starting rematch…`
+                      ? `${displayOpponentUsername} agreed. Starting rematch…`
                       : rematchDialog?.type === "declined"
-                        ? `${opponentUsername} declined the rematch.`
+                        ? `${displayOpponentUsername} declined the rematch.`
                         : rematchDialog?.message}
               </Text>
 

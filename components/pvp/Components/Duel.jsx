@@ -44,6 +44,7 @@ export function Duel({
 
   const moveNoticeOpacity = useRef(new Animated.Value(0)).current;
   const moveNoticeScale = useRef(new Animated.Value(0.75)).current;
+  const moveNoticeTranslateY = useRef(new Animated.Value(0)).current;
 
   const previousEffectKey = useRef(null);
   const pendingPlayerDamage = useRef(false);
@@ -148,8 +149,10 @@ export function Duel({
   useEffect(() => {
     moveNoticeOpacity.stopAnimation();
     moveNoticeScale.stopAnimation();
+    moveNoticeTranslateY.stopAnimation();
     moveNoticeOpacity.setValue(0);
     moveNoticeScale.setValue(0.75);
+    moveNoticeTranslateY.setValue(0);
 
     const animation = Animated.sequence([
       Animated.parallel([
@@ -164,6 +167,33 @@ export function Duel({
           duration: 160,
           useNativeDriver: true,
         }),
+        Animated.sequence([
+          Animated.timing(moveNoticeTranslateY, {
+            toValue: -7,
+            duration: 30,
+            useNativeDriver: true,
+          }),
+          Animated.timing(moveNoticeTranslateY, {
+            toValue: 7,
+            duration: 40,
+            useNativeDriver: true,
+          }),
+          Animated.timing(moveNoticeTranslateY, {
+            toValue: -4,
+            duration: 35,
+            useNativeDriver: true,
+          }),
+          Animated.timing(moveNoticeTranslateY, {
+            toValue: 4,
+            duration: 35,
+            useNativeDriver: true,
+          }),
+          Animated.timing(moveNoticeTranslateY, {
+            toValue: 0,
+            duration: 30,
+            useNativeDriver: true,
+          }),
+        ]),
       ]),
       Animated.timing(moveNoticeScale, {
         toValue: 1,
@@ -180,7 +210,13 @@ export function Duel({
 
     animation.start();
     return () => animation.stop();
-  }, [s.log, lastEffect?.key, moveNoticeOpacity, moveNoticeScale]);
+  }, [
+    s.log,
+    lastEffect?.key,
+    moveNoticeOpacity,
+    moveNoticeScale,
+    moveNoticeTranslateY,
+  ]);
 
 
   useEffect(() => {
@@ -301,7 +337,10 @@ const handleOpponentAttackComplete = () => {
             {
               fontSize: moveNoticeFontSize,
               opacity: moveNoticeOpacity,
-              transform: [{ scale: moveNoticeScale }],
+              transform: [
+                { translateY: moveNoticeTranslateY },
+                { scale: moveNoticeScale },
+              ],
             },
           ]}
           numberOfLines={2}

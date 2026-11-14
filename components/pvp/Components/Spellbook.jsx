@@ -1,4 +1,3 @@
-
 import {
   ScrollView,
   View,
@@ -12,12 +11,7 @@ import { HitShake } from "../Animation/HitShake";
 import { CARDS, PER_PAGE } from "../battleConstants";
 import { C } from "../PvpStyles";
 
-export function Book({
-  s,
-  onPlay,
-  shakeHits = s.hits.me,
-  onShakeComplete,
-}) {
+export function Book({ s, onPlay, shakeHits = s.hits.me, onShakeComplete }) {
   const { width, height } = useWindowDimensions();
 
   const mine = s.turn === "me" && s.me.hp > 0 && s.opp.hp > 0;
@@ -31,12 +25,9 @@ export function Book({
   const cardWidth =
     (bookWidth - bookPadding * 2 - 6 - rowPadding * 2 - cardGap * 2) /
       PER_PAGE +
-    4;
+    12;
 
-  const cardHeight = Math.min(
-    Math.max(height * 0.23, 125),
-    200
-  );
+  const cardHeight = Math.min(Math.max(height * 0.23, 125), 200);
 
   const playerPower = s.me.power || 0;
 

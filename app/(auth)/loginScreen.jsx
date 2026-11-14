@@ -380,6 +380,7 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.bodyBold,
     fontSize: 13,
     color: "#FFD86B",
+    textDecorationLine: "underline",
   },
 
   modalOverlay: {
@@ -449,6 +450,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 12,
     borderWidth: 2,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.22,
+    shadowRadius: 3,
+    elevation: 3,
   },
 
   cancelResetButton: {
@@ -486,6 +492,7 @@ const styles = StyleSheet.create({
     fontSize: 8,
     color: "#FFD86B",
     marginLeft: 10,
+    textDecorationLine: "underline",
   },
 
   loginButton: {
@@ -499,6 +506,11 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     minHeight: 56,
     justifyContent: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.28,
+    shadowRadius: 4,
+    elevation: 4,
   },
 
   disabledButton: {
@@ -516,6 +528,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#E8DFFF",
     textAlign: "center",
+    textDecorationLine: "underline",
   },
 
   backText: {

@@ -268,6 +268,11 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     borderWidth: 2,
     backgroundColor: "rgba(43, 0, 79, 0.94)",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.24,
+    shadowRadius: 4,
+    elevation: 4,
   },
   stageCardLocked: {
     backgroundColor: "rgba(29, 34, 51, 0.94)",

@@ -111,6 +111,12 @@ const styles = StyleSheet.create({
   retryButton: {
     alignSelf: "flex-start",
     marginTop: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+    borderRadius: 10,
+    backgroundColor: "rgba(255, 216, 107, 0.16)",
+    borderWidth: 1,
+    borderColor: "#FFD86B",
   },
 
   retryText: {

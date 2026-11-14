@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Fonts } from "../../constants/Fonts";
 
 export const C = {
   night: "#14102b",
@@ -63,10 +64,18 @@ export const st = StyleSheet.create({
     borderRadius: 12,
     alignItems: "center",
     marginTop: 14,
+    borderWidth: 2,
+    borderColor: "#FFF0C2",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.28,
+    shadowRadius: 4,
+    elevation: 4,
   },
 
   ghost: {
     backgroundColor: "#4b3b94",
+    borderColor: "#8f7ed4",
   },
 
   btnTxt: {
@@ -89,13 +98,20 @@ export const st = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 14,
     borderRadius: 16,
-    backgroundColor: "transparent",
+    backgroundColor: "rgba(75, 59, 148, 0.88)",
+    borderWidth: 1,
+    borderColor: "#8f7ed4",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 3,
   },
 
   exitBtnText: {
     color: "#fff",
     fontWeight: "800",
-    fontSize: 42,
+    fontSize: 25,
   },
 
   modalBackdrop: {
@@ -145,6 +161,13 @@ export const st = StyleSheet.create({
     borderRadius: 12,
     alignItems: "center",
     justifyContent: "center",
+    borderWidth: 1,
+    borderColor: "#FFF0C2",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3,
+    elevation: 3,
   },
 
   modalButtonSecondary: {
@@ -189,9 +212,8 @@ export const st = StyleSheet.create({
   },
 
   log: {
+    fontFamily: Fonts.pixel,
     color: C.teal,
-    fontSize: 15,
-    fontWeight: "600",
     width: "100%",
     textAlign: "center",
     paddingHorizontal: 12,

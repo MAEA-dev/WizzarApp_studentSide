@@ -476,6 +476,11 @@ const styles = StyleSheet.create({
     borderColor: "#75699C",
     borderRadius: 10,
     backgroundColor: "#453B68",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.24,
+    shadowRadius: 3,
+    elevation: 3,
   },
   stayButtonText: {
     fontFamily: Fonts.pixel,
@@ -491,6 +496,11 @@ const styles = StyleSheet.create({
     borderColor: "#FB7185",
     borderRadius: 10,
     backgroundColor: "#BE123C",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.28,
+    shadowRadius: 3,
+    elevation: 3,
   },
   surrenderButtonText: {
     fontFamily: Fonts.pixel,

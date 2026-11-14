@@ -251,6 +251,13 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     padding: 13,
     marginBottom: 10,
+    borderWidth: 1,
+    borderColor: "#7557D9",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.22,
+    shadowRadius: 3,
+    elevation: 3,
   },
 
   disabledButton: {
@@ -300,6 +307,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: 10,
+    borderWidth: 2,
+    borderColor: "#FFF4D2",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 4,
   },
 
   disabledCloseButton: {

@@ -427,6 +427,11 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     paddingVertical: 13,
     alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 3,
   },
 
   gradeButtonActive: {
@@ -469,6 +474,7 @@ const styles = StyleSheet.create({
     fontSize: 8,
     color: "#FFD86B",
     marginLeft: 10,
+    textDecorationLine: "underline",
   },
 
   registerButton: {
@@ -481,6 +487,11 @@ const styles = StyleSheet.create({
     borderColor: "#FFFFFF",
     marginTop: 8,
     marginBottom: 16,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.28,
+    shadowRadius: 4,
+    elevation: 4,
   },
 
   registerButtonText: {
@@ -494,6 +505,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#E8DFFF",
     textAlign: "center",
+    textDecorationLine: "underline",
   },
 
   backText: {
@@ -501,5 +513,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#CFC3FF",
     textAlign: "center",
+    textDecorationLine: "underline",
   },
 });

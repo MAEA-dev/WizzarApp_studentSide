@@ -67,11 +67,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 8,
     gap: 5,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 2,
   },
 
   activeTabButton: {
     backgroundColor: "#FFD86B",
     borderColor: "#FFFFFF",
+    elevation: 4,
   },
 
   tabText: {

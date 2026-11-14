@@ -133,6 +133,11 @@ const styles = StyleSheet.create({
     borderColor: "#7557D9",
     borderRadius: 18,
     padding: 12,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.22,
+    shadowRadius: 3,
+    elevation: 3,
   },
 
   choiceSelected: {
